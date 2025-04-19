@@ -5,8 +5,8 @@ node_modules/
 .venv/
 
 # Caches
-.cache/
-__pycache__/
+cache/
+ß__pycache__/
 *.py[cod]
 *.pyc
 
