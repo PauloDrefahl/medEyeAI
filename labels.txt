@@ -1,0 +1,14 @@
+labels = [
+    "Physician administering defibrillation shock",
+    "Physician checking patient pulse and responsiveness",
+    "Physician performing chest compressions",
+    "Physician establishing intravenous access",
+    "Physician using bag valve mask ventilation",
+]
+
+labels = [
+    "man with a broad, toothy smile",
+    "man with mouth open in a neutral pose",
+    "man holding up two fingers in a peace sign",
+    "man with eyeglasses facing camera"
+]
