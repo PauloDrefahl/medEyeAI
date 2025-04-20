@@ -20,11 +20,13 @@ processor = CLIPProcessor.from_pretrained(MODEL_NAME)
 
 # ─── 3) Labels ───────────────────────────────────────────────────────
 labels = [
-    "man with a broad, toothy smile",
-    "man with mouth open in a neutral pose",
-    "man holding up two fingers in a peace sign",
-    "man with eyeglasses facing camera"
+    "Physician placing defibrillator paddles on chest",
+    "Physician leaning over and checking neck pulse",
+    "Physician performing chest compressions with both hands",
+    "Physician inserting IV needle in patient’s arm",
+    "Physician placing mask over patient face and squeezing bag"
 ]
+
 
 # Precompute & normalize text embeddings once
 with torch.no_grad():
