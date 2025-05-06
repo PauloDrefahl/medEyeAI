@@ -2,7 +2,6 @@ labels = [
     "Physician administering defibrillation shock",
     "Physician checking patient pulse and responsiveness",
     "Physician performing chest compressions",
-    "Physician establishing intravenous access",
     "Physician using bag valve mask ventilation",
 ]
 

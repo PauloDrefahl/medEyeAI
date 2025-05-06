@@ -1,0 +1,5 @@
+torch>=2.2.0          # core tensor engine (CPU, CUDA, or Apple MPS build)
+transformers>=4.40.0  # CLIPProcessor, CLIPModel
+opencv-python>=4.10   # video capture & image handling
+pillow>=10.0          # PIL image utilities
+tqdm>=4.66            # (optional) nice progress bars if you add them

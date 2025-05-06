@@ -10,7 +10,7 @@ DEVICE          = "mps" if torch.backends.mps.is_available() else "cpu"
 MODEL_NAME      = "laion/CLIP-ViT-H-14-laion2B-s32B-b79K"
 UPDATE_INTERVAL = 1.5               # seconds between inferences
 INPUT_SIZE      = (224, 224)        # CLIP’s expected input size
-THRESHOLD       = 0.20              # cosine‑sim cutoff for fallback
+THRESHOLD       = 0.22              # cosine‑sim cutoff for fallback
 FALLBACK_LABEL  = "unrecognized action"
 LOG_FILE        = "log.txt"
 
@@ -31,6 +31,8 @@ with torch.no_grad():
     txt_inputs = processor(text=labels, return_tensors="pt", padding=True).to(DEVICE)
     text_embs  = model.get_text_features(**txt_inputs)
     text_embs  = text_embs / text_embs.norm(p=2, dim=-1, keepdim=True)
+
+
 
 # ─── 4) Threaded inference setup ──────────────────────────────────────
 frame_q = queue.Queue(maxsize=1)

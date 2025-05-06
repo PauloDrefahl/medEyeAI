@@ -4,10 +4,28 @@
   <meta charset="UTF-8">
   <title>MedEye Login</title>
   <link rel="stylesheet" href="login.css">
+  <style>
+    .login-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #1f3f4d; /* Replace this with your text color if needed */
+      font-weight: bold;
+    }
+
+    .login-title img {
+      height: 24px;
+      filter: brightness(0) saturate(100%) invert(14%) sepia(12%) saturate(788%) hue-rotate(158deg) brightness(93%) contrast(87%);
+    }
+  </style>
 </head>
 <body class="login-page">
   <div class="login-box">
-    <h1>MedEye Login</h1>
+    <h1 class="login-title">
+      <img src="../icons/eye-solid.svg" alt="Eye Icon">
+      MedEye Login
+    </h1>
     <input type="text" id="username" placeholder="Username" />
     <input type="password" id="password" placeholder="Password" />
     <button id="loginBtn">Login</button>

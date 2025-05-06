@@ -31,9 +31,14 @@ logoutBtn.onclick = () => {
 }
 
 ipcRenderer.on('log-update', (_, data) => {
-  logBox.textContent += data + '\n'
+  const span = document.createElement('span')
+  span.classList.add('new-entry')
+  span.textContent = data
+  logBox.appendChild(span)
+  logBox.appendChild(document.createElement('br'))
   logBox.scrollTop = logBox.scrollHeight
 })
+
 
 function clearLogDisplay() {
   logBox.textContent = ''

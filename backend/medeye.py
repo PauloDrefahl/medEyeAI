@@ -8,9 +8,9 @@ from transformers import CLIPProcessor, CLIPModel
 # ─── 1) Configuration ────────────────────────────────────────────────
 DEVICE          = "mps" if torch.backends.mps.is_available() else "cpu"
 MODEL_NAME      = "laion/CLIP-ViT-H-14-laion2B-s32B-b79K"
-UPDATE_INTERVAL = 3               # seconds between inferences
-INPUT_SIZE      = (224, 224)        # CLIP’s expected input size
-THRESHOLD       = 0.20              # cosine‑sim cutoff for fallback
+UPDATE_INTERVAL = 1.5               # seconds between inferences
+INPUT_SIZE      = (336, 336)        # CLIP’s expected input size
+THRESHOLD       = 0.19             # cosine‑sim cutoff for fallback
 FALLBACK_LABEL  = "unrecognized action"
 LOG_FILE        = "log.txt"
 
@@ -20,13 +20,11 @@ processor = CLIPProcessor.from_pretrained(MODEL_NAME)
 
 # ─── 3) Labels ───────────────────────────────────────────────────────
 labels = [
-    "Physician placing defibrillator paddles on chest",
-    "Physician leaning over and checking neck pulse",
-    "Physician performing chest compressions with both hands",
-    "Physician inserting IV needle in patient’s arm",
-    "Physician placing mask over patient face and squeezing bag"
+    "man with a broad, toothy smile",
+    "man with mouth open in a neutral pose",
+    "man holding up two fingers in a peace sign",
+    "man with eyeglasses facing camera"
 ]
-
 
 # Precompute & normalize text embeddings once
 with torch.no_grad():

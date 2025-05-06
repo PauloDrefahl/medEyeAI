@@ -1,34 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>MedEye Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="dashboard.css" />
   <script src="https://unpkg.com/phosphor-icons"></script>
 </head>
 <body>
-  <!-- Header row -->
+
+  <!-- Top Header -->
   <div class="header-bar">
     <h1>MedEye AI</h1>
+    <button id="logoutBtn" title="Logout">
+      <i class="ph-gear-bold"></i>
+    </button>
     <button id="logoutBtn" title="Logout">
       <i class="ph-sign-out-bold"></i>
     </button>
   </div>
 
-  <!-- Controls -->
-  <div class="controls">
-    <button id="start">Start Backend</button>
-    <button id="stop">Stop Backend</button>
+  <!-- Dashboard Grid Layout -->
+  <div class="dashboard-wrapper">
+    <div class="dashboard-grid">
+
+      <!-- Live Log Panel -->
+      <div class="card log-panel">
+        <h2>Live Log</h2>
+        <pre id="logBox"></pre>
+      </div>
+
+      <div class="card status-panel">
+        <h2>Program Status</h2>
+      
+        <div class="record-controls">
+          <div class="record-buttons">
+            <button id="start"><i class="ph-play-fill"></i> Start Recording</button>
+            <button id="stop"><i class="ph-stop-fill"></i> Stop Recording</button>
+          </div>
+          <p id="recordingStatus">⏹ Not recording</p>
+        </div>
+        
+        
+
+        <label for="scenarioSelect">Scenario:</label>
+<select id="scenarioSelect">
+  <option value="cardiac-arrest">Cardiac Arrest – CPR / Defib</option>
+  <option value="trauma-response">Trauma Response – Airway / IV</option>
+  <option value="pediatric-emergency">Pediatric Emergency</option>
+  <option value="general-exam">General Examination / Triage</option>
+</select>
+
+        <label for="fpsInput">Target FPS:</label>
+        <input type="number" id="fpsInput" value="3" min="1" max="60" />
+      
+        <p id="timer" class="timer">00:00</p>
+      </div>
+      
+
+      <!-- Generate Report Panel (center bottom) -->
+<div class="card report-view-panel">
+  <h2>Generate Report</h2>
+
+  <label for="reportFormatSelect">Report Format:</label>
+<select id="reportFormatSelect">
+  <option value="standard">Standard Summary</option>
+  <option value="detailed">Detailed Breakdown</option>
+  <option value="timeline">Timeline-Based Report</option>
+  <option value="visual">Visual / Chart Report</option>
+</select>
+
+
+  <label for="reportFormat">Output Format:</label>
+  <select id="reportFormat">
+    <option value="txt">Text (.txt)</option>
+    <option value="pdf">PDF (.pdf)</option>
+  </select>
+
+  <label for="ReportName">Name Report:</label>
+  <textarea id="preview" readonly placeholder="Name your report here..." rows="5"></textarea>
+  <button id="generateReportBtn">Generate Report</button>
+</div>
+
+
+<div class="card report-gen-panel">
+  <h2>Report Archive</h2>
+  <p class="subtext">Search by report name or date:</p>
+
+  <div class="search-container">
+    
+    <input type="date" id="reportDate" title="Filter by date" />
+  
+    <input type="text" id="reportSearch" placeholder="Search by keyword..." />
+    <i class="ph-magnifying-glass-bold search-icon"></i>
   </div>
+  
 
-  <!-- Log Display -->
-  <h2>Live Log</h2>
-  <pre id="logBox"></pre>
+  <div class="report-list">
+    <div class="report-entry">📝 2025-04-19 14:30 — Cardiac Arrest Summary</div>
+    <div class="report-entry">📝 2025-04-18 10:22 — Trauma Response</div>
+    <div class="report-entry">📝 2025-04-17 17:10 — General Exam</div>
+  </div>
+</div>
 
-  <!-- Recording Status -->
-  <div class="status-bar">
-    <span id="recordingStatus">⏹ Not recording</span>
-    <span id="timer">00:00</span>
+
+    </div>
   </div>
 
   <script src="index.js"></script>
