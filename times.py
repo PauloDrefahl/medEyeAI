@@ -4,7 +4,7 @@ import subprocess
 # Configuration
 REPO_PATH = "/Users/paulodrefahl/Desktop/Projects/medeyeai"  # Replace with your GitHub repo path
 COMMIT_MESSAGE = "Medeye 1.1v"  # Commit message
-COMMIT_DATE = "2025-05-06T08:00:00"  # Format: YYYY-MM-DDTHH:MM:SS
+COMMIT_DATE = "2025-05-07T08:00:00"  # Format: YYYY-MM-DDTHH:MM:SS
 BRANCH_NAME = "main"  # Replace if your branch is different
 
 def run_command(command, cwd=None, env=None):
