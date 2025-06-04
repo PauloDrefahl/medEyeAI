@@ -4,7 +4,7 @@ import sys
 
 # === Configuration ===
 REPO_PATH = "/Users/paulodrefahl/Desktop/Projects/medeyeai"  # local repo path
-COMMIT_MESSAGE = "Medeye 1.5v"
+COMMIT_MESSAGE = "Medeye 1.51v"
 COMMIT_DATE = "2025-06-04T08:00:00"  # YYYY-MM-DDTHH:MM:SS
 
 # === Helpers ===
