@@ -4,8 +4,8 @@ import sys
 
 # === Configuration ===
 REPO_PATH = "/Users/paulodrefahl/Desktop/Projects/medeyeai"  # local repo path
-COMMIT_MESSAGE = "Medeye 1.7v"
-COMMIT_DATE = "2025-06-18T08:00:00"  # YYYY-MM-DDTHH:MM:SS
+COMMIT_MESSAGE = "Medeye 1.8v"
+COMMIT_DATE = "2025-06-20T08:00:00"  # YYYY-MM-DDTHH:MM:SS
 
 # === Helpers ===
 def run(command, cwd=None, env=None, allow_fail=False):
